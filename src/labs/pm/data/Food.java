@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package labs.pm.data;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -26,6 +27,11 @@ public class Food extends Product {
 
     public LocalDate getBestBefore() {
         return bestBefore;
+    }
+
+    public Food(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
+        super(id, name, price, rating);
+        this.bestBefore = bestBefore;
     }
     
     
