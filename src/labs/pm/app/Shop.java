@@ -26,6 +26,8 @@ public class Shop {
         Product p3 = new Food(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
         Product p4 = new Product();
         Product p5 = p3.applyRating(Rating.THREE_STAR);
+        Product p6 = new Drink(103, "Chocolate", BigDecimal.valueOf(3.99), Rating.FIVE_STAR);
+        Product p7 = new Food(103, "Chocolate", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
 
         System.out.println(p1);
         System.out.println(p2);
