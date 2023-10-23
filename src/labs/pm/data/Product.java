@@ -7,6 +7,7 @@ package labs.pm.data;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import static java.math.RoundingMode.HALF_UP;
+import java.time.LocalDate;
 import java.util.Objects;
 import static labs.pm.data.Rating.*;
 
@@ -63,6 +64,10 @@ public abstract class Product {
 //        return new Product(id, name, price, newRating);
 //    }
 
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
+    }
+
     @Override
     public String toString() {
         return id + ", " + name + ", " + price + ", " + getDiscount() + ", " + rating.getStars();
@@ -82,7 +87,7 @@ public abstract class Product {
         }
 
 //        if (obj != null && getClass() == obj.getClass()) {
-          if (obj instanceof Product){
+        if (obj instanceof Product) {
             final Product other = (Product) obj;
             return this.id == other.id && Objects.equals(this.name, other.name);
         }
