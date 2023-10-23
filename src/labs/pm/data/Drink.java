@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 milad
+
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,15 +17,23 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.time.LocalTime;
 
 /**
  *
  * @author milad
  */
-public class Drink extends Product{
+public class Drink extends Product {
 
     public Drink(int id, String name, BigDecimal price, Rating rating) {
         super(id, name, price, rating);
     }
-    
+
+    @Override
+    public BigDecimal getDiscount() {
+        LocalTime now = LocalTime.now();
+        return (now.isAfter(LocalTime.of(17, 30)) && (now.isBefore(LocalTime.of(18, 30))))
+                ? super.getDiscount() : BigDecimal.ZERO;
+
+    }
 }

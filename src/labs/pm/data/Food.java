@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package labs.pm.data;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -23,6 +24,7 @@ import java.time.LocalDate;
  * @author milad
  */
 public class Food extends Product {
+
     private LocalDate bestBefore;
 
     public LocalDate getBestBefore() {
@@ -35,9 +37,14 @@ public class Food extends Product {
     }
 
     @Override
-    public String toString() {
-        return super.toString()+ ", " + bestBefore;
+    public BigDecimal getDiscount() {
+        return (bestBefore.isEqual(LocalDate.now()))
+                ? super.getDiscount() : BigDecimal.ZERO;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return super.toString() + ", " + bestBefore;
+    }
+
 }
