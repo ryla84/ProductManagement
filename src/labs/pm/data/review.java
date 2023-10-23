@@ -20,20 +20,26 @@ package labs.pm.data;
  *
  * @author milad
  */
-public interface Rateable<T> {
+public class review {
+    private Rating rating;
+    private String comments;
 
-    public static final Rating DEFAULT_RATING = Rating.NOT_RATED;
-
-    T applyRating(Rating rating);
-    public default T applyRating (int stars){
-        return applyRating (convert(stars));
+    public review(Rating rating, String comments) {
+        this.rating = rating;
+        this.comments = comments;
     }
 
-    public default Rating getRating() {
-        return DEFAULT_RATING;
+    public Rating getRating() {
+        return rating;
     }
 
-    public static Rating convert(int stars) {
-        return (stars >= 0 && stars <= 5) ? Rating.values()[stars] : DEFAULT_RATING;
+    public String getComments() {
+        return comments;
     }
+
+    @Override
+    public String toString() {
+        return "review{" + "rating=" + rating + ", comments=" + comments + '}';
+    }
+    
 }
