@@ -28,6 +28,7 @@ public class Shop {
         Product p5 = p3.applyRating(Rating.THREE_STAR);
         Product p6 = new Drink(103, "Chocolate", BigDecimal.valueOf(3.99), Rating.FIVE_STAR);
         Product p7 = new Food(103, "Chocolate", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+        Product p8 = p4.applyRating(Rating.FIVE_STAR);
         System.out.println(p6.equals(p7));
         
         
