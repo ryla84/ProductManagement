@@ -20,11 +20,11 @@ package labs.pm.data;
  *
  * @author milad
  */
-public class review {
+public class Review {
     private Rating rating;
     private String comments;
 
-    public review(Rating rating, String comments) {
+    public Review(Rating rating, String comments) {
         this.rating = rating;
         this.comments = comments;
     }

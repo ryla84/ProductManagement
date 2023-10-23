@@ -23,6 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.text.MessageFormat;
 
 /**
  *
@@ -61,4 +62,24 @@ public class ProductManager {
         this.product = product.applyRating(rating);
         return this.product;
     }
+
+    public void printProductReport() {
+        StringBuilder txt = new StringBuilder();
+        txt.append(MessageFormat.format(resources.getString("product"),
+                product.getName(),
+                moneyFormat.format(product.getPrice()),
+                product.getRating().getStars(),
+                dateFormat.format(product.getBestBefore())));
+        txt.append('\n');
+        if (review != null) {
+            txt.append(MessageFormat.format(resources.getString("review"),
+                    review.getRating().getStars(),
+                    review.getComments()));
+        } else {
+            txt.append(resources.getString("no.review"));
+        }
+        txt.append('\n');
+        System.out.println(txt);
+    }
+
 }
