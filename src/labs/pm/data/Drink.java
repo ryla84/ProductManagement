@@ -23,7 +23,7 @@ import java.time.LocalTime;
  *
  * @author milad
  */
-public class Drink extends Product {
+public final class Drink extends Product {
 
      Drink(int id, String name, BigDecimal price, Rating rating) {
         super(id, name, price, rating);
