@@ -25,41 +25,40 @@ public class Shop {
     public static void main(String[] args) {
         ProductManager pm = new ProductManager(Locale.UK);
 
-        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-        pm.printProductReport(p1);
-        p1 = pm.reviewProduct(p1, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p1 = pm.reviewProduct(p1, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p1);
+        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+        pm.printProductReport(101);
+        pm.reviewProduct(101, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(101, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(101);
 
-        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-        pm.printProductReport(p2);
-        p2 = pm.reviewProduct(p2, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p2 = pm.reviewProduct(p2, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p2);
+        pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+        pm.printProductReport(102);
+        pm.reviewProduct(102, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(102, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(102);
 
-        Product p3 = pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.NOT_RATED, LocalDate.now().plusDays(2));
-        pm.printProductReport(p3);
-        p3 = pm.reviewProduct(p3, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p3 = pm.reviewProduct(p3, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p3);
+        pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.NOT_RATED, LocalDate.now().plusDays(2));
+        pm.printProductReport(103);
+        pm.reviewProduct(103, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(103, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(103);
+        pm.createProduct(104, "Cookie", BigDecimal.valueOf(2.99), Rating.NOT_RATED, LocalDate.now());
+        pm.printProductReport(104);
+        pm.reviewProduct(104, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(104, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(104);
 
-        Product p4 = pm.createProduct(104, "Cookie", BigDecimal.valueOf(2.99), Rating.NOT_RATED, LocalDate.now());
-        pm.printProductReport(p4);
-        p4 = pm.reviewProduct(p4, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p4 = pm.reviewProduct(p4, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p4);
+        pm.createProduct(105, "Hot Chocolate", BigDecimal.valueOf(2.50), Rating.NOT_RATED);
+        pm.printProductReport(105);
+        pm.reviewProduct(105, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(105, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(105);
 
-        Product p5 = pm.createProduct(105, "Hot Chocolate", BigDecimal.valueOf(2.50), Rating.NOT_RATED);
-        pm.printProductReport(p5);
-        p5 = pm.reviewProduct(p5, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p5 = pm.reviewProduct(p5, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p5);
-        
-        Product p6 = pm.createProduct(106, "Chocolate", BigDecimal.valueOf(2.50), Rating.NOT_RATED, LocalDate.now().plusDays(2));
-        pm.printProductReport(p6);
-        p6 = pm.reviewProduct(p6, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
-        p6 = pm.reviewProduct(p6, Rating.FOUR_STAR, "GOOD TEA");
-        pm.printProductReport(p6);
+        pm.createProduct(106, "Chocolate", BigDecimal.valueOf(2.50), Rating.NOT_RATED, LocalDate.now().plusDays(3));
+        pm.printProductReport(106);
+        pm.reviewProduct(106, Rating.FOUR_STAR, "NICE HOT CUP OF TEA");
+        pm.reviewProduct(106, Rating.FOUR_STAR, "GOOD TEA");
+        pm.printProductReport(106);
 
 //        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
 //        Product p3 = pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
